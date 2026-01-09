@@ -17,6 +17,8 @@ in
 
   imports = [
     ./ghidra
+    ./vscode
+
     ./docker.nix
     ./firefox.nix
     ./git.nix
@@ -38,7 +40,6 @@ in
     };
 
     packages = with pkgs; [
-      vscode
       ayugram-desktop
       discord
       git
