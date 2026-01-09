@@ -10,6 +10,7 @@
       cd = "z";
       ls = "eza";
       cat = "bat";
+      code = "codium";
     };
   };
 
