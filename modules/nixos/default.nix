@@ -30,6 +30,7 @@
 
   nixpkgs.overlays = [
     inputs.ida-pro-overlay.overlays.default
+    inputs.nix-vscode-extensions.overlays.default
   ];
 
   users = {

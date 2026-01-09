@@ -31,6 +31,12 @@
 
     nur.url = "github:nix-community/NUR";
     nur.inputs.nixpkgs.follows = "nixpkgs";
+
+    pwndbg.url = "github:pwndbg/pwndbg";
+    pwndbg.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs: inputs.blueprint { inherit inputs; };

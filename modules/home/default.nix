@@ -17,6 +17,7 @@ in
 
   imports = [
     ./ghidra
+
     ./docker.nix
     ./firefox.nix
     ./git.nix
@@ -25,6 +26,7 @@ in
     ./shell.nix
     ./ssh.nix
     ./vesktop.nix
+    ./vscode.nix
   ];
 
   nix.settings.lazy-trees = true;
@@ -38,7 +40,6 @@ in
     };
 
     packages = with pkgs; [
-      vscode
       ayugram-desktop
       discord
       git
