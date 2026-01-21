@@ -29,8 +29,6 @@ in
     ./vscode.nix
   ];
 
-  nix.settings.lazy-trees = true;
-
   home = {
     stateVersion = "26.05";
 
@@ -40,9 +38,8 @@ in
     };
 
     packages = with pkgs; [
+      android-tools
       ayugram-desktop
-      discord
-      git
 
       nur.repos.dmfrpro.spflashtool5
       nur.repos.dmfrpro.spflashtool6
