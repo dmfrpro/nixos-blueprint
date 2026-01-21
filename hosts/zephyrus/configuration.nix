@@ -14,7 +14,6 @@
     ./bootloader.nix
     ./disko.nix
     ./graphics.nix
-    ./ollama.nix
     ./power.nix
   ];
 
