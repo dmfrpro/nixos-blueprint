@@ -7,7 +7,7 @@ inputs.git-hooks.lib.${system}.run {
   src = ../.;
   hooks = {
     deadnix.enable = true;
-    nixfmt-rfc-style.enable = true;
+    nixfmt.enable = true;
     end-of-file-fixer.enable = true;
   };
 }

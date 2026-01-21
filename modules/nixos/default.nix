@@ -19,13 +19,11 @@
     ./desktop.nix
     ./input.nix
     ./networking.nix
-    ./programs.nix
     ./shell.nix
     ./timezone.nix
     ./virt.nix
   ];
 
-  nix.settings.lazy-trees = true;
   nixpkgs.config.allowUnfree = true;
 
   nixpkgs.overlays = [

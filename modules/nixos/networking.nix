@@ -17,13 +17,7 @@
   programs.mtr.enable = true;
   programs.nm-applet.enable = true;
 
-  services.resolved = {
-    enable = true;
-    extraConfig = ''
-      ResolveUnicastSingleLabel=true
-    '';
-  };
-
+  services.resolved.enable = true;
   environment.etc."resolv.conf".mode = "direct-symlink";
 
   networking.networkmanager.ensureProfiles.profiles.snejugal = {
