@@ -52,8 +52,8 @@ perSystem.devshell.mkShell {
       name = "collect-garbage";
       help = "nix garbage collection";
       command = ''
-        sudo nix-collect-garbage
-        sudo nix-store --optimise
+        sudo nix-collect-garbage -d
+        nix-collect-garbage -d
       '';
     }
   ];
