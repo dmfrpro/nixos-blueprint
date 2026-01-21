@@ -70,15 +70,11 @@ in
     package = pkgs.vscode;
 
     profiles."default" = {
-      enableMcpIntegration = true;
       enableUpdateCheck = false;
     };
 
     # FIXME: https://github.com/nix-community/home-manager/issues/7880
     extensions = with pkgs.nix-vscode-extensions.vscode-marketplace; [
-      # AI
-      saoudrizwan.claude-dev
-
       # C/C++
       llvm-vs-code-extensions.vscode-clangd
       ajshort.include-autocomplete
