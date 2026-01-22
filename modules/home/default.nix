@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   config,
   ...
@@ -16,10 +17,11 @@ in
   };
 
   imports = [
+    inputs.zen-browser.homeModules.twilight
+
     ./ghidra
 
     ./docker.nix
-    ./firefox.nix
     ./git.nix
     ./gpg.nix
     ./keyring.nix
@@ -27,6 +29,7 @@ in
     ./ssh.nix
     ./vesktop.nix
     ./vscode.nix
+    ./zen.nix
   ];
 
   home = {
