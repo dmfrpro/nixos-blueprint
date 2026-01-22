@@ -565,7 +565,8 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_3",
         "nur": "nur",
-        "pwndbg": "pwndbg"
+        "pwndbg": "pwndbg",
+        "zen-browser": "zen-browser"
       }
     },
     "systems": {
@@ -605,6 +606,29 @@
       "original": {
         "owner": "pyproject-nix",
         "repo": "uv2nix",
+        "type": "github"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1768999995,
+        "narHash": "sha256-7OXxa5rG+GeUL0iYkAbpVKFW/QPcThmlZMJufYOiwdc=",
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
+        "rev": "13f0273a63b054c4e6de04f0fc838e18f1bf28e7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
         "type": "github"
       }
     }
