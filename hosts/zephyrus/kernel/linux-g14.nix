@@ -1,5 +1,3 @@
-# https://github.com/ChocolateLoverRaj/nixos-system-config/blob/c0f22b940c69d8b36b70b0c887a7aba7022b37b1/modules/linux-g14.nix
-
 { pkgs, lib, ... }:
 
 let
@@ -9,6 +7,7 @@ let
     rev = "6d082ec0868f945c5fa49cec2eab38d64d0c6b2e";
     hash = "sha256-HAvENk6Urga0TnvvJJhFIBlTu3w+8ICWkxt844kpM1U=";
   };
+
   patches = [
     "sys-kernel_arch-sources-g14_files-0004-more-uarches-for-kernel-6.15.patch"
     "0001-platform-x86-asus-wmi-export-symbols-used-for-read-w.patch"
@@ -38,6 +37,9 @@ let
     "sys-kernel_arch-sources-g14_files-0047-asus-nb-wmi-Add-tablet_mode_sw-lid-flip.patch"
     "sys-kernel_arch-sources-g14_files-0048-asus-nb-wmi-fix-tablet_mode_sw_int.patch"
   ];
+
+  kamakiri = ./kamakiri.cocci;
+
 in
 pkgs.linuxPackagesFor (
   pkgs.linux_6_18.override {
@@ -48,16 +50,22 @@ pkgs.linuxPackagesFor (
           url = "mirror://kernel/linux/kernel/v6.x/linux-${version}.tar.xz";
           hash = "sha256-0KeL8/DRKqoQrzta3K7VvHZ7W3hwXl74hdXpMLcuJdU=";
         };
+
+        nativeBuildInputs = [ pkgs.coccinelle ];
+
         buildPhase = ''
           cp $src -r .
           for patch in ${lib.concatMapStringsSep " " (file: "\"${file}\"") patches}; do
             patch -Np1 -F150 < ${g14}/$patch
           done
+          spatch --sp-file ${kamakiri} --dir drivers/usb/core --in-place
         '';
+
         installPhase = ''
           cp -r . $out
         '';
       };
+
       version = "6.18.1";
       modDirVersion = "6.18.1";
 
