@@ -60,4 +60,9 @@
   security.pki.certificateFiles = [
     ../../secrets/omp-ca.crt
   ];
+
+  services.zapret-discord-youtube = {
+    enable = true;
+    configName = "general (SIMPLE_FAKE_ALT2)";
+  };
 }
