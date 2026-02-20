@@ -53,8 +53,6 @@
     ipv6 = {
       addr-gen-mode = "default";
       address1 = secrets.vpn.snejugal.ipv6-address;
-      dns = secrets.vpn.snejugal.ipv6-dns;
-      dns-search = "~";
       method = "manual";
     };
   };
