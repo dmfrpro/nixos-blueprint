@@ -53,6 +53,8 @@ in
       picocom
 
       ida-pro
+
+      zoom-us
     ];
   };
 }
