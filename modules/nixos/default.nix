@@ -13,6 +13,7 @@
     inputs.home-manager.nixosModules.home-manager
     inputs.nur.modules.nixos.default
     inputs.determinate.nixosModules.default
+    inputs.zapret-discord-youtube.nixosModules.default
 
     ./audio.nix
     ./bluetooth.nix
