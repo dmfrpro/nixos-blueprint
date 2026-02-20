@@ -42,7 +42,7 @@ let
 
   c-settings = {
     "[c]" = {
-      checkpatch.checkpatchPath = "${perSystem.self.checkpatch-pl}/bin/checkpatch.pl";
+      checkpatch.checkpatchPath = "${pkgs.nur.repos.dmfrpro.checkpatch}/bin/checkpatch.pl";
       checkpatch.run = "onSave";
     }
     // common-c-cpp-settings;
@@ -61,7 +61,8 @@ in
     cmake-format
     mbake
     shfmt
-    perSystem.self.checkpatch-pl
+    
+    nur.repos.dmfrpro.checkpatch
   ];
 
   programs.vscode = {

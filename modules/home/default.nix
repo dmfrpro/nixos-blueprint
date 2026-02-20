@@ -44,9 +44,11 @@ in
       android-tools
       ayugram-desktop
 
+      nur.repos.dmfrpro.auroraos-asbt-apptool
+      nur.repos.dmfrpro.auroraos-platform-sdk
       nur.repos.dmfrpro.spflashtool5
       nur.repos.dmfrpro.spflashtool6
-      nur.repos.dmfrpro.rkflashtool-fork
+      nur.repos.dmfrpro.rkflashtool
       nur.repos.dmfrpro.upgrade_tool
 
       mtkclient

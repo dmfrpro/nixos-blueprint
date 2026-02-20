@@ -22,6 +22,7 @@
     ./networking.nix
     ./shell.nix
     ./timezone.nix
+    ./udev.nix
     ./virt.nix
   ];
 
