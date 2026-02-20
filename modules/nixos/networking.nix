@@ -58,4 +58,8 @@
       method = "manual";
     };
   };
+
+  security.pki.certificateFiles = [
+    ../../secrets/omp-ca.crt
+  ];
 }
