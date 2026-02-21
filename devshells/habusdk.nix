@@ -22,6 +22,9 @@ let
     }
   );
 
+  gcc-arm = perSystem.frostix.gcc-toolchain.gcc-arm-linux-gnueabihf;
+  gcc-aarch64 = perSystem.frostix.gcc-toolchain.gcc-aarch64-linux-gnu;
+
 in
 (pkgs.buildFHSEnv {
   name = "habusdk";
@@ -52,6 +55,10 @@ in
 
       # Custom wrapped gcc
       gcc
+
+      # Cross Toolchain
+      gcc-arm
+      gcc-aarch64
 
       android-tools
       jdk
@@ -122,6 +129,9 @@ in
     export HOSTCXXFLAGS="-B/usr/lib64 -B/usr/lib32 -I/usr/include"
     export HOSTLDFLAGS="-L/usr/lib64 -L/usr/lib32 -L/usr/lib"
     export HOSTLDLIBS=""
+
+    export CROSS_COMPILE32="${gcc-arm}/bin/arm-none-linux-gnueabihf-"
+    export CROSS_COMPILE64="${gcc-aarch64}/bin/aarch64-none-linux-gnu-"
 
     export LD_LIBRARY_PATH="/usr/lib64:/usr/lib32:/usr/lib''${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
     export LD_LIBRARY_PATH="${pkgs.sssd}/lib:''${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
