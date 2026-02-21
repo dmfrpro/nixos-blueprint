@@ -10,6 +10,11 @@ let
     inherit config;
     secrets = import ../../secrets/secrets-eval.nix;
   };
+
+  auroraSdk = with pkgs.nur.repos.dmfrpro; [
+    auroraos-asbt-apptool
+    auroraos-platform-sdk
+  ];
 in
 {
   _module.args = {
@@ -24,6 +29,7 @@ in
     ./docker.nix
     ./git.nix
     ./gpg.nix
+    ./flashing.nix
     ./keyring.nix
     ./shell.nix
     ./ssh.nix
@@ -40,23 +46,15 @@ in
       MOZ_ENABLE_WAYLAND = "1";
     };
 
-    packages = with pkgs; [
-      android-tools
-      ayugram-desktop
+    packages =
+      with pkgs;
+      [
+        ayugram-desktop
+        zoom-us
 
-      nur.repos.dmfrpro.auroraos-asbt-apptool
-      nur.repos.dmfrpro.auroraos-platform-sdk
-      nur.repos.dmfrpro.spflashtool5
-      nur.repos.dmfrpro.spflashtool6
-      nur.repos.dmfrpro.rkflashtool
-      nur.repos.dmfrpro.upgrade_tool
-
-      mtkclient
-      picocom
-
-      ida-pro
-
-      zoom-us
-    ];
+        # Custom IDA Pro
+        ida-pro
+      ]
+      ++ auroraSdk;
   };
 }

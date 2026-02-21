@@ -18,6 +18,9 @@
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
     firefox-addons.inputs.nixpkgs.follows = "nixpkgs";
 
+    frostix.url = "github:shomykohai/frostix";
+    frostix.inputs.nixpkgs.follows = "nixpkgs";
+
     git-hooks.url = "github:cachix/git-hooks.nix";
     git-hooks.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -31,6 +34,8 @@
 
     nur.url = "github:nix-community/NUR";
     nur.inputs.nixpkgs.follows = "nixpkgs";
+
+    penumbra.url = "github:shomykohai/penumbra";
 
     pwndbg.url = "github:pwndbg/pwndbg";
     pwndbg.inputs.nixpkgs.follows = "nixpkgs";
