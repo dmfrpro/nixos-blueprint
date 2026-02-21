@@ -29,6 +29,7 @@
     isNormalUser = true;
     createHome = true;
     extraGroups = [
+      "adbusers"
       "wheel"
       "networkmanager"
       "input"
