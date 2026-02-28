@@ -40,4 +40,6 @@
       "docker"
     ];
   };
+
+  nix.settings.trusted-users = [ "dmfrpro" ];
 }
