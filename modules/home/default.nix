@@ -54,6 +54,7 @@ in
 
         # Custom IDA Pro
         ida-pro
+        devenv
       ]
       ++ auroraSdk;
   };
