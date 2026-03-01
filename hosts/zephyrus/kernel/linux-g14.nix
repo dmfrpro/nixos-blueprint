@@ -78,6 +78,7 @@ pkgs.linuxPackagesFor (
         ASUS_ARMOURY m
         CONFIG_ASUS_WMI_DEPRECATED_ATTRS y
         CONFIG_DRM_AMD_COLOR_STEAMDECK y
+        SCHED_ITMT y
       '';
       ignoreConfigErrors = true;
     };
