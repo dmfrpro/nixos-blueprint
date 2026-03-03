@@ -346,6 +346,26 @@
         "type": "github"
       }
     },
+    "i915-sriov": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1772289477,
+        "narHash": "sha256-18rbgAqd+dn72LmTBl/oP+/RMh5zffCISKYsiWIgVOg=",
+        "owner": "strongtz",
+        "repo": "i915-sriov-dkms",
+        "rev": "c9ac0c3424eeb7e82a3bbe5e0f3cc421039bd4ef",
+        "type": "github"
+      },
+      "original": {
+        "owner": "strongtz",
+        "repo": "i915-sriov-dkms",
+        "type": "github"
+      }
+    },
     "ida-pro-overlay": {
       "inputs": {
         "nixpkgs": [
@@ -690,6 +710,7 @@
         "frostix": "frostix",
         "git-hooks": "git-hooks",
         "home-manager": "home-manager",
+        "i915-sriov": "i915-sriov",
         "ida-pro-overlay": "ida-pro-overlay",
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixos-hardware": "nixos-hardware",
