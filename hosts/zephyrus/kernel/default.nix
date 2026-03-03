@@ -5,7 +5,6 @@
 
   boot.kernelModules = [
     "nvme"
-    "i915"
     "cryptd"
     "aesni_intel"
     "kvm-intel"

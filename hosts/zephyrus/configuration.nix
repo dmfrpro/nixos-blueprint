@@ -8,6 +8,7 @@
   imports = [
     inputs.disko.nixosModules.disko
     inputs.nixos-hardware.nixosModules.asus-zephyrus-gu605my
+    inputs.i915-sriov.nixosModules.default
     flake.nixosModules.default
 
     ./kernel
