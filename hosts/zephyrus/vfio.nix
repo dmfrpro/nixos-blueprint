@@ -1,43 +1,12 @@
 { pkgs, ... }:
 
 {
-  boot.kernelPackages = pkgs.callPackage ./linux-g14.nix { };
-
-  boot.kernelModules = [
-    "nvme"
-    "cryptd"
-    "aesni_intel"
-    "kvm-intel"
-  ];
-
-  boot.extraModulePackages = with pkgs; [ i915-sriov ];
-
-  boot.initrd.availableKernelModules = [
-    "xhci_pci"
-    "thunderbolt"
-    "nvme"
-    "usbhid"
-    "usb_storage"
-    "uas"
-    "sd_mod"
-    "rtsx_pci_sdmmc"
-  ];
-
   boot.kernelParams = [
-    "quiet"
-    "rhgb"
-    "nowatchdog"
-    "nvme_load=YES"
     "intel_iommu=on"
     "i915.enable_guc=3"
-    "i915.max_vfs=7"
-    "i915.force_probe=0x7d55"
+    "i915.max_vfs=2"
     "i915.enable_dc=1"
-  ];
-
-  boot.blacklistedKernelModules = [
-    "nouveau"
-    "xe"
+    "i915.enable_psr=0"
   ];
 
   systemd.services.i915-sriov = {
