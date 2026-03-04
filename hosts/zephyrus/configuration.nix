@@ -19,6 +19,7 @@ in
     ./disko.nix
     ./graphics.nix
     ./power.nix
+    ./vfio.nix
   ];
 
   nixpkgs.hostPlatform = facter.system;
