@@ -53,4 +53,28 @@ in
   };
 
   programs.difftastic.enable = true;
+
+  programs.lazygit = {
+    enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+    shellWrapperName = "lg";
+
+    settings = {
+      gui = {
+        tabWidth = 4;
+        filterMode = "fuzzy";
+      };
+
+      git.pagers = [
+        {
+          externalDiffCommand = "difft --color=always";
+        }
+      ];
+
+      commit = {
+        signoff = true;
+      };
+    };
+  };
 }
