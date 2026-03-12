@@ -33,6 +33,9 @@
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
+    nixos-vfio.url = "github:j-brn/nixos-vfio";
+    nixos-vfio.inputs.nixpkgs.follows = "nixpkgs";
+
     nur.url = "github:nix-community/NUR";
     nur.inputs.nixpkgs.follows = "nixpkgs";
 

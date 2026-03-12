@@ -1,11 +1,13 @@
-{ pkgs, perSystem, ... }:
+{ pkgs, ... }:
 
 {
   boot.kernelParams = [
+    "iommu=pt"
     "intel_iommu=on"
     "i915.enable_guc=3"
     "i915.max_vfs=2"
     "i915.enable_dc=1"
+    "kvm.ignore_msrs=1"
   ];
 
   systemd.services.i915-sriov = {
@@ -30,4 +32,50 @@
       done
     '';
   };
+
+  # TODO: don't include igfx_off
+  # virtualisation.vfio = {
+  #   enable = true;
+  #   IOMMUType = "intel";
+  #   ignoreMSRs = true;
+  # };
+
+  virtualisation.kvmfr = {
+    enable = true;
+    devices = pkgs.lib.singleton {
+      size = 128;
+      permissions = {
+        group = "qemu-libvirtd";
+        mode = "0660";
+      };
+    };
+  };
+
+  virtualisation.libvirtd = {
+    deviceACL = [
+      "/dev/kvm"
+      "/dev/kvmfr0"
+      "/dev/kvmfr1"
+      "/dev/shm/scream"
+      "/dev/shm/looking-glass"
+      "/dev/null"
+      "/dev/full"
+      "/dev/zero"
+      "/dev/random"
+      "/dev/urandom"
+      "/dev/ptmx"
+      "/dev/kvm"
+      "/dev/kqemu"
+      "/dev/rtc"
+      "/dev/hpet"
+      "/dev/vfio/vfio"
+    ];
+  };
+
+  users.users.qemu-libvirtd.group = "qemu-libvirtd";
+  users.groups.qemu-libvirtd = { };
+
+  environment.systemPackages = with pkgs; [
+    looking-glass-client
+  ];
 }
