@@ -1,16 +1,6 @@
-{
-  inputs,
-  pkgs,
-  config,
-  ...
-}:
+{ inputs, pkgs, perSystem, ... }:
 
 let
-  ida-pro = pkgs.callPackage ./ida-pro.nix {
-    inherit config;
-    secrets = import ../../secrets/secrets-eval.nix;
-  };
-
   auroraSdk = with pkgs.nur.repos.dmfrpro; [
     auroraos-asbt-apptool
     auroraos-platform-sdk
@@ -51,10 +41,9 @@ in
       [
         ayugram-desktop
         zoom-us
-
-        # Custom IDA Pro
-        ida-pro
         devenv
+
+        # perSystem.self.ida-pro
       ]
       ++ auroraSdk;
   };

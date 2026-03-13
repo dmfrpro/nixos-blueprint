@@ -7,12 +7,6 @@ let
     rkflashtool
     upgrade_tool
   ];
-
-  frostixPkgs = with perSystem.frostix; [
-    lkpatcher
-    magiskboot
-    mtkclient-git
-  ];
 in
 {
   home.packages =
@@ -20,8 +14,8 @@ in
     [
       android-tools
       picocom
+      mtkclient
       perSystem.penumbra.default
     ]
-    ++ dmfrproPkgs
-    ++ frostixPkgs;
+    ++ dmfrproPkgs;
 }
