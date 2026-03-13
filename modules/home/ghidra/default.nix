@@ -21,7 +21,7 @@ in
 {
   home.packages = with pkgs; [
     ghidra-ext
-    python313Packages.ghidra-bridge
+    python314Packages.ghidra-bridge
     z3
   ];
 

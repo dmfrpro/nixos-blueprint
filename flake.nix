@@ -16,9 +16,6 @@
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
     firefox-addons.inputs.nixpkgs.follows = "nixpkgs";
 
-    frostix.url = "github:shomykohai/frostix";
-    frostix.inputs.nixpkgs.follows = "nixpkgs";
-
     git-hooks.url = "github:cachix/git-hooks.nix";
     git-hooks.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -27,9 +24,6 @@
 
     i915-sriov.url = "github:strongtz/i915-sriov-dkms";
     i915-sriov.inputs.nixpkgs.follows = "nixpkgs";
-
-    ida-pro-overlay.url = "github:dmfrpro/ida-pro-overlay";
-    ida-pro-overlay.inputs.nixpkgs.follows = "nixpkgs";
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
@@ -45,6 +39,7 @@
     nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
 
     zapret-discord-youtube.url = "github:kartavkun/zapret-discord-youtube";
+    zapret-discord-youtube.inputs.nixpkgs.follows = "nixpkgs";
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";

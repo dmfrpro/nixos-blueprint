@@ -1,8 +1,4 @@
-{
-  pkgs,
-  perSystem,
-  ...
-}:
+{ pkgs, ... }:
 
 let
   nix-settings = {
@@ -57,7 +53,7 @@ in
     clang-tools
     cppcheck
     ctags
-    python313Packages.lizard
+    python314Packages.lizard
     cmake-format
     mbake
     shfmt
