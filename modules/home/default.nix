@@ -1,4 +1,4 @@
-{ inputs, pkgs, perSystem, ... }:
+{ inputs, pkgs, ... }:
 
 let
   auroraSdk = with pkgs.nur.repos.dmfrpro; [
@@ -15,7 +15,7 @@ in
     inputs.zen-browser.homeModules.twilight
 
     ./ghidra
-
+    ./vscode
     ./docker.nix
     ./git.nix
     ./gpg.nix
@@ -24,7 +24,6 @@ in
     ./shell.nix
     ./ssh.nix
     ./vesktop.nix
-    ./vscode.nix
     ./zen.nix
   ];
 
