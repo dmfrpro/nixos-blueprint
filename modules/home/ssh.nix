@@ -15,6 +15,8 @@ let
       identityFile = keyFile;
       extraOptions = {
         PreferredAuthentications = "publickey";
+        IgnoreUnknown = "WarnWeakCrypto";
+        WarnWeakCrypto = "no-pq-kex";
       };
     };
   };

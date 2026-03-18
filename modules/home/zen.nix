@@ -1,11 +1,6 @@
-{
-  pkgs,
-  inputs,
-  ...
-}:
+{ pkgs, perSystem, ... }:
 
 let
-  addons = inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system};
   flakeIcon = "share/icons/hicolor/scalable/apps/nix-snowflake.svg";
   nixSnowflakeIcon = "${pkgs.nixos-icons}/${flakeIcon}";
 in
@@ -44,7 +39,7 @@ in
         zen.view.use-deprecated-urlbar = true;
       };
 
-      extensions.packages = with addons; [
+      extensions.packages = with perSystem.firefox-addons; [
         # Ad-blocking
         ublock-origin
         privacy-badger
