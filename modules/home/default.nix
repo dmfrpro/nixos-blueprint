@@ -33,7 +33,13 @@ in
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
       MOZ_ENABLE_WAYLAND = "1";
+      NIXPKGS_ALLOW_UNFREE = "1";
+      NIXPKGS_ALLOW_INSECURE = "1";
     };
+
+    file.".config/nixpkgs/config.nix".text = ''
+      { allowUnfree = true; }
+    '';
 
     packages =
       with pkgs;
