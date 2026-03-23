@@ -1,25 +1,6 @@
-{ pkgs, secrets, ... }:
+{ secrets, ... }:
 
 {
-  networking = {
-    networkmanager = {
-      enable = true;
-      dns = "systemd-resolved";
-
-      plugins = with pkgs; [
-        networkmanager-openvpn
-      ];
-    };
-
-    firewall.checkReversePath = false;
-  };
-
-  programs.mtr.enable = true;
-  programs.nm-applet.enable = true;
-
-  services.resolved.enable = true;
-  environment.etc."resolv.conf".mode = "direct-symlink";
-
   networking.networkmanager.ensureProfiles.profiles.snejugal = {
     connection = {
       id = "snejugal";
@@ -55,14 +36,5 @@
       address1 = secrets.vpn.snejugal.ipv6-address;
       method = "manual";
     };
-  };
-
-  security.pki.certificateFiles = [
-    ../../secrets/omp-ca.crt
-  ];
-
-  services.zapret-discord-youtube = {
-    enable = true;
-    configName = "general (SIMPLE_FAKE_ALT2)";
   };
 }

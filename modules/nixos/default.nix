@@ -13,13 +13,12 @@
     inputs.home-manager.nixosModules.home-manager
     inputs.nur.modules.nixos.default
     inputs.determinate.nixosModules.default
-    inputs.zapret-discord-youtube.nixosModules.default
+    ./networking
 
     ./audio.nix
     ./bluetooth.nix
     ./desktop.nix
     ./input.nix
-    ./networking.nix
     ./shell.nix
     ./timezone.nix
     ./udev.nix
