@@ -25,8 +25,6 @@
     i915-sriov.url = "github:strongtz/i915-sriov-dkms";
     i915-sriov.inputs.nixpkgs.follows = "nixpkgs";
 
-    nixos-hardware.url = "github:nixos/nixos-hardware";
-
     nur.url = "github:nix-community/NUR";
     nur.inputs.nixpkgs.follows = "nixpkgs";
 

@@ -1,7 +1,7 @@
 { ... }:
 
 let
-  spec = builtins.fromJSON (builtins.readFile ./limine.json);
+  windows-uuid = "f306bfd1-3b6e-4e2a-b12e-2367ffb3d161";
 in
 {
   boot.loader.limine = {
@@ -18,7 +18,7 @@ in
     extraEntries = ''
       /Windows
           protocol: efi
-          path: uuid(${spec.windows-uuid}):/EFI/Microsoft/Boot/bootmgfw.efi
+          path: uuid(${windows-uuid}):/EFI/Microsoft/Boot/bootmgfw.efi
     '';
   };
 

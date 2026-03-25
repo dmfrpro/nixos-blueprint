@@ -5,22 +5,6 @@ let
   mtlConfig = "intel_lpmd_config_F6_M170.xml";
 in
 {
-  powerManagement.enable = true;
-
-  services.power-profiles-daemon.enable = true;
-  services.logind.settings.Login.LidSwitch = "suspend-then-hibernate";
-  services.logind.settings.Login.PowerKey = "hibernate";
-  services.logind.settings.Login.PowerKeyLongPress = "poweroff";
-
-  boot.kernelParams = [
-    "mem_sleep_default=deep"
-  ];
-
-  systemd.sleep.settings.Sleep = {
-    HibernateDelaySec = "30m";
-    SuspendState = "mem";
-  };
-
   systemd.services.intel-lpmd = {
     description = "Intel Linux Energy Optimizer (lpmd) Service";
     documentation = [ "man:intel_lpmd(8)" ];

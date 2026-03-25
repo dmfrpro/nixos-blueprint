@@ -7,15 +7,16 @@
 {
   imports = [
     inputs.disko.nixosModules.disko
-    inputs.nixos-hardware.nixosModules.asus-zephyrus-gu605my
     inputs.i915-sriov.nixosModules.default
     flake.nixosModules.default
 
+    ./boot
+    ./graphics
     ./kernel
-    ./bootloader.nix
+    ./power
+
     ./disko.nix
-    ./graphics.nix
-    ./power.nix
+    ./keyboard.nix
   ];
 
   nixpkgs.hostPlatform = "x86_64-linux";
