@@ -9,25 +9,23 @@
   ];
 
   hardware.nvidia = {
-    open = true;
+    open = false;
+    nvidiaSettings = true;
 
     prime = {
       offload = {
         enable = true;
         enableOffloadCmd = true;
+        offloadCmdMainProgram = "prime-run";
       };
 
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:1:0:0";
     };
 
-    powerManagement = {
-      enable = false;
-      finegrained = false;
-    };
-
     modesetting.enable = true;
     dynamicBoost.enable = false;
+    gsp.enable = true;
   };
 
   boot.blacklistedKernelModules = [

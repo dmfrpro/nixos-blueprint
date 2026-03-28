@@ -4,6 +4,7 @@
   imports = [
     ./bootloader.nix
     ./initrd.nix
+    ./kernel.nix
   ];
 
   boot.plymouth.enable = true;

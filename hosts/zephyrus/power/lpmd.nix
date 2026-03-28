@@ -25,7 +25,19 @@ in
       PrivateTmp = true;
     };
 
-    wantedBy = [ "multi-user.target" ];
+    wantedBy = [
+      "multi-user.target"
+      "suspend.target"
+      "hibernate.target"
+      "hybrid-sleep.target"
+    ];
+
+    after = [
+      "suspend.target"
+      "hibernate.target"
+      "hybrid-sleep.target"
+    ];
+
     aliases = [ "org.freedesktop.intel_lpmd.service" ];
   };
 

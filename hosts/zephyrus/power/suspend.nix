@@ -11,7 +11,7 @@
   };
 
   # https://github.com/NixOS/nixpkgs/issues/273053
-  boot.resumeDevice = pkgs.lib.mkIf
-    (builtins.length config.swapDevices == 1)
-    (builtins.head config.swapDevices).device;
+  boot.resumeDevice = pkgs.lib.mkIf (
+    builtins.length config.swapDevices == 1
+  ) (builtins.head config.swapDevices).device;
 }

@@ -25,6 +25,9 @@
     i915-sriov.url = "github:strongtz/i915-sriov-dkms";
     i915-sriov.inputs.nixpkgs.follows = "nixpkgs";
 
+    kamakiri.url = "github:dmfrpro/kamakiri-flake";
+    kamakiri.inputs.nixpkgs.follows = "nixpkgs";
+
     nur.url = "github:nix-community/NUR";
     nur.inputs.nixpkgs.follows = "nixpkgs";
 

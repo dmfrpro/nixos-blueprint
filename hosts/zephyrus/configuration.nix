@@ -12,7 +12,6 @@
 
     ./boot
     ./graphics
-    ./kernel
     ./power
 
     ./disko.nix
