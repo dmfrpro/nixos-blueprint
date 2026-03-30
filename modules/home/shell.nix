@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 
 {
   programs.zsh = {
@@ -75,5 +75,10 @@
         "*.conf:INI"
       ];
     };
+  };
+
+  programs.nh = {
+    enable = true;
+    flake = "${config.home.homeDirectory}/nixos-blueprint";
   };
 }

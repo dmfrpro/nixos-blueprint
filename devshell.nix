@@ -1,44 +1,69 @@
 { pkgs, ... }:
 
 let
-  mkRebuildScript =
+  mkRebuildApp =
     mode:
-    pkgs.writeShellScriptBin "rebuild-${mode}" ''
-      if [ $# -eq 0 ]; then
-        echo "Usage: rebuild-${mode} <hostname>"
-        echo "Example: rebuild-${mode} zephyrus"
-        exit 1
-      fi
-      sudo nixos-rebuild ${mode} --flake path:.#"$1"
+    pkgs.writeShellApplication {
+      name = mode;
+
+      runtimeInputs = with pkgs; [
+        nh
+        coreutils
+      ];
+
+      text = ''
+        nh os ${mode} path:./#"$(hostname)"
+      '';
+    };
+
+  gc = pkgs.writeShellApplication {
+    name = "gc";
+    runtimeInputs = with pkgs; [ nh ];
+    text = ''
+      nh clean all
     '';
+  };
 
-  collect-garbage = pkgs.writeShellScriptBin "collect-garbage" ''
-    sudo nix-collect-garbage -d
-    nix-collect-garbage -d
-  '';
+  commands = [
+    (mkRebuildApp "switch")
+    (mkRebuildApp "boot")
+    gc
+  ];
 
-  help = pkgs.writeShellScriptBin "help" ''
-    BLUE="\033[1;34m"
-    GREEN="\033[0;32m"
-    NC="\033[0m" # No Color
+  help = pkgs.writeShellApplication {
+    name = "help";
 
-    printf "''${BLUE}Available commands:''${NC}\n"
-    printf "  ''${GREEN}rebuild-{switch,boot,test}''${NC} <hostname>\n"
-    printf "  ''${GREEN}collect-garbage''${NC}\n"
-  '';
+    runtimeInputs = with pkgs; [ coreutils ];
+
+    text =
+      let
+        entries = builtins.concatStringsSep "\n" (
+          map (
+            pkg:
+            let
+              exe = pkgs.lib.getExe pkg;
+            in
+            ''
+              name="$(${pkgs.coreutils}/bin/basename ${exe})"
+              # Use %b for color variables so \033 is interpreted
+              printf "  - %b%s%b\n" "$GREEN" "$name" "$NC"
+            ''
+          ) commands
+        );
+      in
+      ''
+        BLUE="\033[1;34m"
+        GREEN="\033[0;32m"
+        NC="\033[0m"
+
+        printf "%bAvailable commands:%b\n" "$BLUE" "$NC"
+        ${entries}
+      '';
+  };
 
 in
 pkgs.mkShell {
-  packages = with pkgs; [
-    bash
-    direnv
-    nix-direnv
-    (mkRebuildScript "switch")
-    (mkRebuildScript "boot")
-    (mkRebuildScript "test")
-    collect-garbage
-    help
-  ];
+  packages = commands ++ [ help ];
 
   shellHook = ''
     ${pkgs.bash}/bin/bash '${help}/bin/help'
