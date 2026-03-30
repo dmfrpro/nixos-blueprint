@@ -15,6 +15,7 @@
     ./power
 
     ./disko.nix
+    ./filesystem.nix
     ./keyboard.nix
   ];
 
