@@ -3,25 +3,8 @@
 let
   python = pkgs.python313;
   pythonPackages = python.pkgs;
-
-  cryptography_46_0_5 = pythonPackages.cryptography.overridePythonAttrs (old: {
-    version = "46.0.5";
-    src = pkgs.fetchPypi {
-      pname = "cryptography";
-      version = "46.0.5";
-      hash = "sha256-q6zkmSRyaON1cnGy8eJEs2sG+FFc8nxNSUaPyesW6T0=";
-    };
-    doCheck = false;
-  });
-
-  customPythonPackages = pythonPackages.overrideScope (
-    self: super: {
-      cryptography = cryptography_46_0_5;
-    }
-  );
-
 in
-customPythonPackages.buildPythonPackage rec {
+pythonPackages.buildPythonPackage rec {
   pname = "tg-ws-proxy";
   version = "1.2.1";
 
@@ -34,9 +17,9 @@ customPythonPackages.buildPythonPackage rec {
 
   format = "pyproject";
 
-  build-system = with customPythonPackages; [ setuptools ];
+  build-system = with pythonPackages; [ setuptools ];
 
-  dependencies = with customPythonPackages; [
+  dependencies = with pythonPackages; [
     aiohttp
     aiohttp-socks
     cryptography
