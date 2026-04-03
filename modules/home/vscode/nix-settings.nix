@@ -1,15 +1,12 @@
-{ pkgs, ... }:
+{ pkgs, vsPkgs, ... }:
 
-let
-  vsMarketplace = pkgs.nix-vscode-extensions.vscode-marketplace;
-in
 {
   home.packages = with pkgs; [
     nixd
     nixfmt
   ];
 
-  programs.vscode.extensions = with vsMarketplace; [
+  programs.vscode.extensions = with vsPkgs; [
     jnoortheen.nix-ide
     mkhl.direnv
     arrterian.nix-env-selector

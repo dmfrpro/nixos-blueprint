@@ -1,9 +1,11 @@
 { pkgs, ... }:
 
 let
-  vsMarketplace = pkgs.nix-vscode-extensions.vscode-marketplace;
+  vsPkgs = pkgs.nix-vscode-extensions.vscode-marketplace;
 in
 {
+  _module.args.vsPkgs = vsPkgs;
+
   imports = [
     ./cpp-settings.nix
     ./nix-settings.nix
@@ -17,7 +19,7 @@ in
       enableUpdateCheck = false;
     };
 
-    extensions = with vsMarketplace; [
+    extensions = with vsPkgs; [
       vscode-icons-team.vscode-icons
     ];
 

@@ -1,7 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, vsPkgs, ... }:
 
 let
-  vsMarketplace = pkgs.nix-vscode-extensions.vscode-marketplace;
   checkpatch-pl = "${pkgs.nur.repos.dmfrpro.checkpatch}";
 in
 {
@@ -10,7 +9,7 @@ in
     checkpatch-pl
   ];
 
-  programs.vscode.extensions = with vsMarketplace; [
+  programs.vscode.extensions = with vsPkgs; [
     ms-vscode.cpptools-extension-pack
     ms-vscode.makefile-tools
     ajshort.include-autocomplete
