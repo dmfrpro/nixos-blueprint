@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 let
   windows-uuid = "f306bfd1-3b6e-4e2a-b12e-2367ffb3d161";
@@ -7,7 +7,7 @@ in
   boot.loader.limine = {
     enable = true;
     maxGenerations = 16;
-    secureBoot.enable = false;
+    secureBoot.enable = true;
     style.interface.branding = " ";
     style.interface.resolution = "2560x1600";
 
@@ -23,4 +23,6 @@ in
   };
 
   boot.loader.efi.canTouchEfiVariables = true;
+
+  environment.systemPackages = with pkgs; [ sbctl ];
 }
