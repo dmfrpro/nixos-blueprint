@@ -11,13 +11,12 @@ in
 
   programs.vscode.extensions = with vsMarketplace; [
     jnoortheen.nix-ide
-    io-github-oops418.nix-env-picker
+    mkhl.direnv
+    arrterian.nix-env-selector
   ];
 
   programs.vscode.profiles."default".userSettings = {
-    nixEnvPicker.envFile = "flake.nix";
-    nixEnvPicker.terminalAutoActivate = true;
-    nixEnvPicker.terminalActivateCommand = "nix develop";
+    nixEnvSelector.useFlakes = true;
 
     nix.enableLanguageServer = true;
     nix.formatterPath = "${pkgs.nixfmt}/bin/nixfmt";
