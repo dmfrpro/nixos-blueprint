@@ -13,6 +13,7 @@ in
     jnoortheen.nix-ide
     mkhl.direnv
     arrterian.nix-env-selector
+    nefrob.vscode-just-syntax
   ];
 
   programs.vscode.profiles."default".userSettings = {
