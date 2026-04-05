@@ -38,6 +38,9 @@
 
     tg-ws-proxy-flake.url = "github:dmfrpro/tg-ws-proxy-flake";
 
+    nixcord.url = "github:FlameFlag/nixcord";
+    nixcord.inputs.nixpkgs.follows = "nixpkgs";
+
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
 
