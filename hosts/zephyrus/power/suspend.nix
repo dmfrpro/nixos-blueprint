@@ -2,7 +2,7 @@
 
 {
   boot.kernelParams = [
-    "mem_sleep_default=deep"
+    "mem_sleep_default=s2idle"
   ];
 
   systemd.sleep.settings.Sleep = {
