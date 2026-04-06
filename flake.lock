@@ -378,6 +378,26 @@
         "type": "github"
       }
     },
+    "intel-lpmd": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1775437341,
+        "narHash": "sha256-ZffQfqc/gxUInoxM+EGeBnPJ0L8pL2mVMQWmZqR69Dw=",
+        "owner": "dmfrpro",
+        "repo": "intel-lpmd-flake",
+        "rev": "54d1ad3d8a3316a4e95bb3876bcacf7a3cb0f467",
+        "type": "github"
+      },
+      "original": {
+        "owner": "dmfrpro",
+        "repo": "intel-lpmd-flake",
+        "type": "github"
+      }
+    },
     "kamakiri": {
       "inputs": {
         "nixpkgs": [
@@ -776,6 +796,7 @@
         "git-hooks": "git-hooks",
         "home-manager": "home-manager",
         "i915-sriov": "i915-sriov",
+        "intel-lpmd": "intel-lpmd",
         "kamakiri": "kamakiri",
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixcord": "nixcord",
