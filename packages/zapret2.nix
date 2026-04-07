@@ -2,13 +2,13 @@
 
 pkgs.stdenv.mkDerivation rec {
   pname = "zapret2";
-  version = "0.9.4.5";
+  version = "0.9.4.7";
 
   src = pkgs.fetchFromGitHub {
     owner = "bol-van";
     repo = "zapret2";
     rev = "v${version}";
-    hash = "sha256-vfYFcwJpAT4P7ozJIBUOT2zJeK8lfG7bFZZFB9E3Ilw=";
+    hash = "sha256-GkwJZZRmn3ZjEa7jdxWEnfHMPfVHke8VhfeWeKMJUiw=";
   };
 
   buildInputs = with pkgs; [
