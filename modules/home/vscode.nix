@@ -10,6 +10,10 @@ in
     nixd
     nixfmt
 
+    # Shell
+    shellcheck
+    shfmt
+
     # Cpp
     clang-tools
     checkpatch-pl
@@ -28,11 +32,17 @@ in
 
       # Nix
       jnoortheen.nix-ide
-      mkhl.direnv
       arrterian.nix-env-selector
 
       # Just
       nefrob.vscode-just-syntax
+
+      # RPM
+      rvsmartporting.rpm-spec-ext
+
+      # Shell
+      mkhl.direnv
+      mads-hartmann.bash-ide-vscode
 
       # Cpp
       llvm-vs-code-extensions.vscode-clangd
