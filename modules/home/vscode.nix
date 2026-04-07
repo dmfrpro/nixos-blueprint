@@ -103,6 +103,8 @@ in
       checkpatch.run = "onSave";
       checkpatch.checkpatchPath = "${checkpatch-pl}/bin/checkpatch.pl";
       checkpatch.diagnosticLevel = "Warning";
+      cmake.configureOnOpen = false;
+      cmake.configureOnExit = false;
     };
   };
 }
