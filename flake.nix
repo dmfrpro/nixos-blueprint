@@ -39,7 +39,8 @@
     pwndbg.url = "github:pwndbg/pwndbg";
     pwndbg.inputs.nixpkgs.follows = "nixpkgs";
 
-    tg-ws-proxy-flake.url = "github:dmfrpro/tg-ws-proxy-flake";
+    tg-ws-proxy.url = "github:dmfrpro/tg-ws-proxy-flake";
+    tg-ws-proxy.inputs.nixpkgs.follows = "nixpkgs";
 
     nixcord.url = "github:FlameFlag/nixcord";
     nixcord.inputs.nixpkgs.follows = "nixpkgs";
