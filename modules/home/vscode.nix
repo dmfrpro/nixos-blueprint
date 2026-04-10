@@ -54,7 +54,7 @@ in
     ];
 
     profiles."default".userSettings = {
-      workbench.colorTheme = "Experimental Dark";
+      workbench.colorTheme = "Dark 2026";
       workbench.iconTheme = "vscode-icons";
       "update.mode" = "none";
 
