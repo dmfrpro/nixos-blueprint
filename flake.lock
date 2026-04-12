@@ -8,15 +8,15 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1771437256,
-        "narHash": "sha256-bLqwib+rtyBRRVBWhMuBXPCL/OThfokA+j6+uH7jDGU=",
-        "owner": "numtide",
+        "lastModified": 1775824723,
+        "narHash": "sha256-gCjIfr/IcNBfw33ShGZ7HaBfbiAgcMzEcm06Uk1I6pw=",
+        "owner": "dmfrpro",
         "repo": "blueprint",
-        "rev": "06ee7190dc2620ea98af9eb225aa9627b68b0e33",
+        "rev": "7a7decbc3e84ad193c435d5c7229179b5d12fc68",
         "type": "github"
       },
       "original": {
-        "owner": "numtide",
+        "owner": "dmfrpro",
         "repo": "blueprint",
         "type": "github"
       }
