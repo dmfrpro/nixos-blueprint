@@ -16,7 +16,7 @@
     ./networking
 
     ./audio.nix
-    ./bluetooth.nix
+    ./connectivity.nix
     ./desktop.nix
     ./displaylink.nix
     ./input.nix
