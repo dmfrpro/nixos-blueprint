@@ -18,7 +18,6 @@
     ./audio.nix
     ./connectivity.nix
     ./desktop.nix
-    ./displaylink.nix
     ./input.nix
     ./shell.nix
     ./timezone.nix
