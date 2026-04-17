@@ -36,6 +36,15 @@ let
         };
       };
 
+      "device-root" = {
+        user = "root";
+        hostname = "192.168.2.15";
+        userKnownHostsFile = "/dev/null";
+        extraOptions = {
+          StrictHostKeyChecking = "no";
+        };
+      };
+
       "omp-pc" = {
         user = "${secrets.omp.username}";
         hostname = "${secrets.omp.domains.omp-pc}";
