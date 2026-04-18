@@ -30,6 +30,10 @@ in
     extensions = with vsPkgs; [
       vscode-icons-team.vscode-icons
 
+      # Containers
+      ms-vscode-remote.remote-containers
+      ms-azuretools.vscode-containers
+
       # Nix
       jnoortheen.nix-ide
       arrterian.nix-env-selector
