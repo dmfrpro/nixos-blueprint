@@ -28,9 +28,6 @@
     intel-lpmd.url = "github:dmfrpro/intel-lpmd-flake";
     intel-lpmd.inputs.nixpkgs.follows = "nixpkgs";
 
-    kamakiri.url = "github:dmfrpro/kamakiri-flake";
-    kamakiri.inputs.nixpkgs.follows = "nixpkgs";
-
     nur.url = "github:nix-community/NUR";
     nur.inputs.nixpkgs.follows = "nixpkgs";
 

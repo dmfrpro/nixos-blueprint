@@ -380,26 +380,6 @@
         "type": "github"
       }
     },
-    "kamakiri": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1774725462,
-        "narHash": "sha256-LJaptBRMyPwj+W0pwiB1FuTcnQg+Njkq7FVDfzaBXkY=",
-        "owner": "dmfrpro",
-        "repo": "kamakiri-flake",
-        "rev": "922fa778e75d53922a6dde3009ac535c6ac70a4e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "dmfrpro",
-        "repo": "kamakiri-flake",
-        "type": "github"
-      }
-    },
     "naersk": {
       "inputs": {
         "fenix": "fenix",
@@ -748,7 +728,6 @@
         "home-manager": "home-manager",
         "i915-sriov": "i915-sriov",
         "intel-lpmd": "intel-lpmd",
-        "kamakiri": "kamakiri",
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixcord": "nixcord",
         "nixpkgs": "nixpkgs_2",

@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
 let
   asusConfig = {
@@ -10,10 +10,6 @@ let
   };
 in
 {
-  imports = [
-    inputs.kamakiri.nixosModules.default
-  ];
-
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     kernelPatches = [ asusConfig ];
