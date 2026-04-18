@@ -8,6 +8,7 @@
       "https://nix-community.cachix.org"
       "https://install.determinate.systems"
       "https://devenv.cachix.org"
+      "https://attic.xuyh0120.win/lantian"
     ];
 
     trusted-public-keys = [
@@ -16,6 +17,7 @@
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "cache.flakehub.com-3:hJuILl5sVK4iKm86JzgdXW12Y2Hwd5G07qKtHTOcDCM="
       "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
+      "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
     ];
 
     experimental-features = [
@@ -29,6 +31,12 @@
 
     blueprint.url = "github:numtide/blueprint";
     blueprint.inputs.nixpkgs.follows = "nixpkgs";
+
+    cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+    cachyos-kernel.inputs.nixpkgs.follows = "nixpkgs";
+
+    kamakiri.url = "github:dmfrpro/kamakiri-flake";
+    kamakiri.inputs.nixpkgs.follows = "nixpkgs";
 
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
     determinate.inputs.nixpkgs.follows = "nixpkgs";
