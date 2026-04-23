@@ -22,6 +22,8 @@ let
           "ssh://git@${secrets.omp.domains.os-git}".insteadOf = "https://${secrets.omp.domains.os-git}";
           "https://github.com".insteadOf = "git://github.com";
         };
+
+        color.ui = "auto";
       };
     }
   ];
@@ -42,6 +44,8 @@ in
       url = {
         "ssh://git@github.com".insteadOf = "https://github.com";
       };
+
+      color.ui = "auto";
     };
 
     signing = {
