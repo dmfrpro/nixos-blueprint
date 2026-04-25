@@ -44,7 +44,7 @@ in
     packages =
       with pkgs;
       [
-        ayugram-desktop
+        telegram-desktop
         zoom-us
         devenv
 
