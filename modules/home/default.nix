@@ -37,10 +37,6 @@ in
       NIXPKGS_ALLOW_INSECURE = "1";
     };
 
-    file.".config/nixpkgs/config.nix".text = ''
-      { allowUnfree = true; }
-    '';
-
     packages =
       with pkgs;
       [

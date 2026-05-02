@@ -6,7 +6,6 @@
     ./dpi-bypass.nix
     ./omp.nix
     ./snejugal.nix
-    ./tg-ws-proxy.nix
   ];
 
   networking = {
