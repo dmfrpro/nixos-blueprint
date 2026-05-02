@@ -9,7 +9,7 @@
   ];
 
   hardware.nvidia = {
-    open = false;
+    open = true;
     nvidiaSettings = true;
 
     prime = {

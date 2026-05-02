@@ -16,6 +16,7 @@
 
     ./disko.nix
     ./filesystem.nix
+    ./gaming.nix
     ./keyboard.nix
   ];
 
@@ -40,6 +41,7 @@
       "dialout"
       "plugdev"
       "docker"
+      "gamemode"
     ];
   };
 
