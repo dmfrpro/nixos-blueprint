@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, perSystem, ... }:
 
 let
   vsPkgs = pkgs.nix-vscode-extensions.vscode-marketplace;
-  checkpatch-pl = "${pkgs.nur.repos.dmfrpro.checkpatch}";
+  checkpatch-pl = "${perSystem.self.checkpatch}";
 in
 {
   home.packages = with pkgs; [

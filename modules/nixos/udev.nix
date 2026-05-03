@@ -1,10 +1,19 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   services.udev = {
     enable = true;
-    packages = with pkgs.nur.repos.dmfrpro; [
-      mtk-udev-rules
-    ];
+    extraRules = ''
+      # Make the MT65xx preloader available for 'others'.
+      # This allows users to run spflashtool out of the box,
+      # without the need to run as 'root' or using `sudo ...`.
+      ACTION=="add", KERNEL=="ttyACM[0-9]*", ATTRS{idVendor}=="0e8d", ATTRS{idProduct}=="2000", MODE="0666"
+
+      # From mtkclient
+      SUBSYSTEM=="usb", ATTR{idVendor}=="0e8d", MODE="0666", TAG+="uaccess"
+      SUBSYSTEM=="usb", ATTR{idVendor}=="1004", MODE="0666", TAG+="uaccess"
+      SUBSYSTEM=="usb", ATTR{idVendor}=="22d9", MODE="0666", TAG+="uaccess"
+      SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", MODE="0666", TAG+="uaccess"
+    '';
   };
 }

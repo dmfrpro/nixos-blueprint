@@ -59,14 +59,6 @@
     intel-lpmd.url = "github:dmfrpro/intel-lpmd-flake";
     intel-lpmd.inputs.nixpkgs.follows = "nixpkgs";
 
-    nur.url = "github:nix-community/NUR";
-    nur.inputs.nixpkgs.follows = "nixpkgs";
-
-    penumbra.url = "github:shomykohai/penumbra";
-
-    pwndbg.url = "github:pwndbg/pwndbg";
-    pwndbg.inputs.nixpkgs.follows = "nixpkgs";
-
     proxy-suite.url = "github:FUFSoB/proxy-suite-flake";
     proxy-suite.inputs.nixpkgs.follows = "nixpkgs";
 

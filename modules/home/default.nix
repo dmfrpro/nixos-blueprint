@@ -1,11 +1,5 @@
 { inputs, pkgs, ... }:
 
-let
-  auroraSdk = with pkgs.nur.repos.dmfrpro; [
-    auroraos-asbt-apptool
-    auroraos-platform-sdk
-  ];
-in
 {
   _module.args = {
     secrets = import ../../secrets/secrets-eval.nix;
@@ -45,7 +39,6 @@ in
         devenv
 
         # perSystem.self.ida-pro
-      ]
-      ++ auroraSdk;
+      ];
   };
 }
