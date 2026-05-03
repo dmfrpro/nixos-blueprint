@@ -21,6 +21,9 @@
     ./zen.nix
   ];
 
+  # https://github.com/nix-community/home-manager/issues/7935
+  manual.manpages.enable = false;
+
   home = {
     stateVersion = "26.05";
 
