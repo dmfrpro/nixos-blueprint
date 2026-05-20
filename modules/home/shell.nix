@@ -1,32 +1,32 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    historySubstringSearch.enable = true;
 
     shellAliases = {
-      cd = "z";
       ls = "eza";
       cat = "bat";
     };
+
+    initContent = ''
+      bindkey '^[[1;5C' forward-word
+      bindkey '^[[1;5D' backward-word
+      bindkey '^[[5C' forward-word
+      bindkey '^[[5D' backward-word
+      bindkey '^[Oc' forward-word
+      bindkey '^[Od' backward-word
+    '';
   };
 
-  programs.zsh.oh-my-zsh = {
+  programs.oh-my-posh = {
     enable = true;
-    theme = "macovsky";
-    plugins = [
-      "direnv"
-      "docker"
-      "git"
-      "gpg-agent"
-      "history"
-      "history-substring-search"
-      "repo"
-      "ssh"
-      "fzf"
-    ];
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+    useTheme = "stelbent-compact.minimal";
   };
 
   programs.direnv = {
@@ -34,6 +34,7 @@
     enableBashIntegration = true;
     enableZshIntegration = true;
     nix-direnv.enable = true;
+    silent = true;
 
     config = {
       warn_timeout = "0s";
