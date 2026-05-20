@@ -6,6 +6,9 @@ let
 in
 {
   home.packages = with pkgs; [
+    # AI
+    perSystem.kimi-code.kimi-cli
+
     # Nix
     nixd
     nixfmt
@@ -29,6 +32,9 @@ in
 
     extensions = with vsPkgs; [
       vscode-icons-team.vscode-icons
+
+      # AI
+      moonshot-ai.kimi-code
 
       # Containers
       ms-vscode-remote.remote-containers
@@ -89,6 +95,9 @@ in
         editor.tabSize = 4;
         editor.insertSpaces = false;
       };
+
+      # AI
+      kimi.executablePath = "${perSystem.kimi-code.kimi-cli}/bin/kimi";
 
       # Nix
       nixEnvSelector.useFlakes = true;

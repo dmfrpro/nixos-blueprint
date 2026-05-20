@@ -59,6 +59,9 @@
     intel-lpmd.url = "github:dmfrpro/intel-lpmd-flake";
     intel-lpmd.inputs.nixpkgs.follows = "nixpkgs";
 
+    kimi-code.url = "github:MoonshotAI/kimi-cli";
+    kimi-code.inputs.nixpkgs.follows = "nixpkgs";
+
     proxy-suite.url = "github:FUFSoB/proxy-suite-flake";
     proxy-suite.inputs.nixpkgs.follows = "nixpkgs";
 
