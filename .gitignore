@@ -1,9 +1,12 @@
-# direnv
-.direnv/
-
 # nix
 result
 result-*
 
 # secrets
 secrets/
+
+# Ignore all dot files and folders
+.*
+# But not those
+!.gitignore
+!.envrc
