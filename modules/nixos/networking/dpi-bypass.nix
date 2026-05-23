@@ -17,7 +17,7 @@
     };
     zapret = {
       enable = true;
-      configName = "general (SIMPLE_FAKE_ALT2)";
+      configName = "general (FAKE_TLS_AUTO_ALT3)";
     };
   };
 }
