@@ -4,50 +4,45 @@
   secrets,
   ...
 }:
+
 let
   omp_priv = "${config.home.homeDirectory}/.ssh/omp";
   personal_priv = "${config.home.homeDirectory}/.ssh/personal";
 
-  mkMatchBlock = domain: keyFile: {
+  mkHost = domain: keyFile: {
     "${domain}" = {
-      addKeysToAgent = "yes";
-      identitiesOnly = true;
-      identityFile = keyFile;
-      extraOptions = {
-        PreferredAuthentications = "publickey";
-        IgnoreUnknown = "WarnWeakCrypto";
-        WarnWeakCrypto = "no-pq-kex";
-      };
+      AddKeysToAgent = "yes";
+      IdentitiesOnly = "yes";
+      IdentityFile = keyFile;
+      PreferredAuthentications = "publickey";
+      IgnoreUnknown = "WarnWeakCrypto";
+      WarnWeakCrypto = "no-pq-kex";
     };
   };
 
-  matchBlocks = lib.mkMerge [
-    (mkMatchBlock secrets.omp.domains.git omp_priv)
-    (mkMatchBlock secrets.omp.domains.os-git omp_priv)
-    (mkMatchBlock "github.com" personal_priv)
-    (mkMatchBlock "gitlab.com" personal_priv)
+  settings = lib.mkMerge [
+    (mkHost secrets.omp.domains.git omp_priv)
+    (mkHost secrets.omp.domains.os-git omp_priv)
+    (mkHost "github.com" personal_priv)
+    (mkHost "gitlab.com" personal_priv)
     {
       "device" = {
-        user = "defaultuser";
-        hostname = "192.168.2.15";
-        userKnownHostsFile = "/dev/null";
-        extraOptions = {
-          StrictHostKeyChecking = "no";
-        };
+        User = "defaultuser";
+        Hostname = "192.168.2.15";
+        UserKnownHostsFile = "/dev/null";
+        StrictHostKeyChecking = "no";
       };
 
       "device-root" = {
-        user = "root";
-        hostname = "192.168.2.15";
-        userKnownHostsFile = "/dev/null";
-        extraOptions = {
-          StrictHostKeyChecking = "no";
-        };
+        User = "root";
+        Hostname = "192.168.2.15";
+        UserKnownHostsFile = "/dev/null";
+        StrictHostKeyChecking = "no";
       };
 
       "omp-pc" = {
-        user = "${secrets.omp.username}";
-        hostname = "${secrets.omp.domains.omp-pc}";
+        User = "${secrets.omp.username}";
+        Hostname = "${secrets.omp.domains.omp-pc}";
       };
     }
   ];
@@ -72,7 +67,7 @@ in
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-    matchBlocks = matchBlocks;
+    inherit settings;
   };
 
   home.file = {
