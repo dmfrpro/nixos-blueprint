@@ -1,8 +1,6 @@
 { ... }:
 
 {
-  nixpkgs.config.nvidia.acceptLicense = true;
-
   services.xserver.videoDrivers = [
     "modesetting"
     "nvidia"

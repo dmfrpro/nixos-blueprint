@@ -76,5 +76,13 @@
     zen-browser.inputs.home-manager.follows = "home-manager";
   };
 
-  outputs = inputs: inputs.blueprint { inherit inputs; };
+  outputs =
+    inputs:
+    inputs.blueprint {
+      inherit inputs;
+      nixpkgs.config = {
+        allowUnfree = true;
+        nvidia.acceptLicense = true;
+      };
+    };
 }
