@@ -1,4 +1,9 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  perSystem,
+  pkgs,
+  ...
+}:
 
 {
   _module.args = {
@@ -35,14 +40,12 @@
       NIXPKGS_ALLOW_INSECURE = "1";
     };
 
-    packages =
-      with pkgs;
-      [
-        telegram-desktop
-        zoom-us
-        devenv
+    packages = with pkgs; [
+      telegram-desktop
+      zoom-us
+      devenv
 
-        # perSystem.self.ida-pro
-      ];
+      perSystem.self.ida-pro
+    ];
   };
 }

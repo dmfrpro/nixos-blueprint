@@ -109,7 +109,10 @@ pkgs.stdenv.mkDerivation rec {
 
     # Link the exported libraries to the output.
     for lib in $IDADIR/*.so $IDADIR/*.so.6; do
-      ln -s $lib $out/lib/$(basename $lib)
+      name=$(basename $lib)
+      # Skip libclang.so to avoid conflicts with clang-tools.
+      [ "$name" = "libclang.so" ] && continue
+      ln -s $lib $out/lib/$name
     done
 
     # Manually patch libraries that dlopen stuff.
@@ -128,7 +131,8 @@ pkgs.stdenv.mkDerivation rec {
         --prefix QT_PLUGIN_PATH : $IDADIR/plugins/platforms \
         --prefix PYTHONPATH : $out/bin/idalib/python \
         --prefix PATH : ${pythonForIDA}/bin:$IDADIR \
-        --prefix LD_LIBRARY_PATH : $out/lib
+        --prefix LD_LIBRARY_PATH : $out/lib \
+        --prefix XDG_DATA_DIRS : ${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}
       ln -s $IDADIR/$bb $out/bin/$bb
     done
 
