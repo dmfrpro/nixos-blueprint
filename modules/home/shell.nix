@@ -1,6 +1,6 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
-{
+{  
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
@@ -20,6 +20,15 @@
       bindkey '^[Oc' forward-word
       bindkey '^[Od' backward-word
     '';
+  };
+
+  programs.alacritty.enable = true;
+
+  programs.zellij = {
+    enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+    exitShellOnExit = true;
   };
 
   programs.oh-my-posh = {
