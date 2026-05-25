@@ -11,8 +11,33 @@
   };
 
   environment.gnome.excludePackages = with pkgs; [
-    totem
+    baobab
+    cheese
+    eog
     epiphany
+    gedit
+    simple-scan
+    totem
+    yelp
+    evince
+    file-roller
+    geary
+
+    gnome-calculator
+    gnome-calendar
+    gnome-characters
+    gnome-console
+    gnome-clocks
+    gnome-contacts
+    gnome-font-viewer
+    gnome-logs
+    gnome-maps
+    gnome-music
+    gnome-photos
+    gnome-system-monitor
+    gnome-terminal
+    gnome-weather
+    gnome-disk-utility
   ];
 
   services.gnome.gnome-keyring.enable = true;
