@@ -31,4 +31,7 @@
   };
 
   system.stateVersion = "26.05";
+
+  programs.nix-ld.enable = true;
+  services.envfs.enable = true;
 }
