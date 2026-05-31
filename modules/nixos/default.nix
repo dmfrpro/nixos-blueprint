@@ -20,10 +20,6 @@
     ./virt.nix
   ];
 
-  nixpkgs.overlays = [
-    inputs.nix-vscode-extensions.overlays.default
-  ];
-
   nix.settings.trusted-users = [
     "root"
     "@wheel"

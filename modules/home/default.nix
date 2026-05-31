@@ -23,7 +23,7 @@
     ./shell.nix
     ./ssh.nix
     ./vesktop.nix
-    ./vscode.nix
+    ./zeditor.nix
     ./zen.nix
   ];
 
