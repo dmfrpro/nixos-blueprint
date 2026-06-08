@@ -29,6 +29,43 @@ let
   ];
 
   git-libsecret = "${pkgs.git.override { withLibsecret = true; }}";
+
+  difft-tab-aware = pkgs.writeShellScriptBin "difft-tab-aware" ''
+    tab_width=4
+
+    for arg in "$@"; do
+      case "$arg" in
+        -*) continue ;;
+      esac
+
+      case "$arg" in
+        *.c|*.h)
+          tab_width=8
+          break
+          ;;
+        *.nix)
+          tab_width=2
+          break
+          ;;
+      esac
+    done
+
+    new_args=()
+    inserted=false
+    for arg in "$@"; do
+      if [[ "$inserted" == false && "$arg" != -* ]]; then
+        new_args+=(--tab-width "$tab_width")
+        inserted=true
+      fi
+      new_args+=("$arg")
+    done
+
+    if [[ "$inserted" == false ]]; then
+      new_args+=(--tab-width "$tab_width")
+    fi
+
+    exec ${pkgs.difftastic}/bin/difft "''${new_args[@]}"
+  '';
 in
 {
   programs.git = {
@@ -56,7 +93,10 @@ in
     includes = includes;
   };
 
-  programs.difftastic.enable = true;
+  programs.difftastic = {
+    enable = true;
+    git.enable = true;
+  };
 
   programs.lazygit = {
     enable = true;
@@ -72,7 +112,7 @@ in
 
       git.pagers = [
         {
-          externalDiffCommand = "difft --color=always";
+          externalDiffCommand = "${difft-tab-aware}/bin/difft-tab-aware --color=always";
         }
       ];
 
@@ -81,4 +121,6 @@ in
       };
     };
   };
+
+  home.packages = [ difft-tab-aware ];
 }
