@@ -14,7 +14,6 @@
     inputs.zen-browser.homeModules.twilight
 
     ./ghidra
-    ./asfp.nix
     ./docker.nix
     ./git.nix
     ./gpg.nix
