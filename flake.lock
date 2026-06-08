@@ -432,11 +432,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1776524661,
-        "narHash": "sha256-Hw5I3oAVBr1MPoKNjJypmALhkHvtLvCSfwWpySAG/pU=",
+        "lastModified": 1780884504,
+        "narHash": "sha256-smhI9ZUqPJ1LHhE0a01C38AVg9Sz7OnMaSLHDt44Rco=",
         "owner": "dmfrpro",
         "repo": "intel-lpmd-flake",
-        "rev": "83ddca9773c7f0d4c16cc78b22184b55bd6a21f1",
+        "rev": "226def6f3960505f2dfeabfb6b8299952ced856f",
         "type": "github"
       },
       "original": {
