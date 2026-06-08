@@ -5,6 +5,10 @@
     secrets = import ../../secrets/secrets-eval.nix;
   };
 
+  nixpkgs.overlays = [
+    inputs.nix-vscode-extensions.overlays.default
+  ];
+
   imports = [
     inputs.home-manager.nixosModules.home-manager
     ./networking

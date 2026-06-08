@@ -347,6 +347,26 @@
         "type": "github"
       }
     },
+    "nix-vscode-extensions": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1780892930,
+        "narHash": "sha256-YjT3Kf3tEdh6LK7YtW1d3DP02mH+Cf331Xt8CDuBg9s=",
+        "owner": "nix-community",
+        "repo": "nix-vscode-extensions",
+        "rev": "ebd0101b03e316f3a62089335102d47e4bf65d5a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nix-vscode-extensions",
+        "type": "github"
+      }
+    },
     "nixcord": {
       "inputs": {
         "flake-compat": "flake-compat_3",
@@ -514,6 +534,7 @@
         "i915-sriov": "i915-sriov",
         "intel-lpmd": "intel-lpmd",
         "kimi-code": "kimi-code",
+        "nix-vscode-extensions": "nix-vscode-extensions",
         "nixcord": "nixcord",
         "nixpkgs": "nixpkgs",
         "proxy-suite": "proxy-suite",
