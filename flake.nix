@@ -21,9 +21,6 @@
     blueprint.url = "github:numtide/blueprint";
     blueprint.inputs.nixpkgs.follows = "nixpkgs";
 
-    cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
-    cachyos-kernel.inputs.nixpkgs.follows = "nixpkgs";
-
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
 

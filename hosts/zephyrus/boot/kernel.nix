@@ -1,17 +1,8 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
-let
-  kernel = pkgs.cachyosKernels.linux-cachyos-latest-lto-x86_64-v4;
-  helpers = pkgs.callPackage "${inputs.cachyos-kernel.outPath}/helpers.nix" { };
-  kernelPackagesWithLTOFix = helpers.kernelModuleLLVMOverride (pkgs.linuxKernel.packagesFor kernel);
-in
 {
-  nixpkgs.overlays = [
-    inputs.cachyos-kernel.overlays.default
-  ];
-
   boot = {
-    kernelPackages = kernelPackagesWithLTOFix;
+    kernelPackages = pkgs.linuxPackages_zen;
 
     kernelModules = [
       "nvme"
