@@ -56,8 +56,6 @@ in
 
       # Cpp
       llvm-vs-code-extensions.vscode-clangd
-      ms-vscode.cmake-tools
-      ms-vscode.makefile-tools
       ajshort.include-autocomplete
       ionutvmi.path-autocomplete
       idanp.checkpatch
@@ -116,8 +114,6 @@ in
       checkpatch.run = "onSave";
       checkpatch.checkpatchPath = "${checkpatch-pl}/bin/checkpatch.pl";
       checkpatch.diagnosticLevel = "Warning";
-      cmake.configureOnOpen = false;
-      cmake.configureOnExit = false;
     };
   };
 }

@@ -44,7 +44,8 @@
       zoom-us
       devenv
 
-      perSystem.self.ida-pro
+      # perSystem.self.ida-pro
+      androidStudioForPlatformPackages.canary
     ];
   };
 }

@@ -24,7 +24,7 @@
 
         youtubeAdblock.enable = true;
         fixYoutubeEmbeds.enable = true;
-        ClearURLs.enable = true;
+        clearUrls.enable = true;
 
         fakeNitro = {
           enable = true;
@@ -52,7 +52,7 @@
 
         silentTyping.enable = true;
         messageClickActions.enable = true;
-        OnePingPerDM.enable = true;
+        onePingPerDm.enable = true;
 
         validReply.enable = true;
         validUser.enable = true;

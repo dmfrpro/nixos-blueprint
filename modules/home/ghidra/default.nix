@@ -7,7 +7,6 @@ let
       ret-sync
       findcrypt
       machinelearning
-      # gnudisassembler
       ghidra-firmware-utils
       ghidraninja-ghidra-scripts
       ghidra-delinker-extension
@@ -21,7 +20,6 @@ in
 {
   home.packages = with pkgs; [
     ghidra-ext
-    python313Packages.ghidra-bridge
     z3
   ];
 
