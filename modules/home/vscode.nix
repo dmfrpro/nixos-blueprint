@@ -34,7 +34,7 @@ in
       vscode-icons-team.vscode-icons
 
       # AI
-      moonshot-ai.kimi-code
+      saoudrizwan.claude-dev
 
       # Containers
       ms-vscode-remote.remote-containers
