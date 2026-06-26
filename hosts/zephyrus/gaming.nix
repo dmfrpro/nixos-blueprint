@@ -21,6 +21,7 @@
         "--adaptive-sync"
         "--hdr-enabled"
         "--hdr-debug-force-output"
+        "--force-grab-cursor"
       ];
     };
 
