@@ -33,6 +33,6 @@
   # Backlight fixes
   boot.kernelParams = [
     "nvidia.NVreg_EnableBacklightHandler=0"
-    "nvidia.NVReg_RegistryDwords=EnableBrightnessControl=0"
+    "nvidia.NVreg_RegistryDwords=EnableBrightnessControl=0"
   ];
 }
