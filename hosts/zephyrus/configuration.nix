@@ -7,7 +7,6 @@
 {
   imports = [
     inputs.disko.nixosModules.disko
-    inputs.i915-sriov.nixosModules.default
     flake.nixosModules.default
 
     ./boot

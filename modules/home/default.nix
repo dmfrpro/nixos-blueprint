@@ -1,9 +1,4 @@
-{
-  inputs,
-  perSystem,
-  pkgs,
-  ...
-}:
+{ inputs, pkgs, ... }:
 
 {
   _module.args = {
@@ -42,10 +37,6 @@
     packages = with pkgs; [
       telegram-desktop
       zoom-us
-      devenv
-
-      # perSystem.self.ida-pro
-      androidStudioForPlatformPackages.canary
     ];
   };
 }

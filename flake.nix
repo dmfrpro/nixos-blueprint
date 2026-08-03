@@ -33,9 +33,6 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    i915-sriov.url = "github:strongtz/i915-sriov-dkms";
-    i915-sriov.inputs.nixpkgs.follows = "nixpkgs";
-
     intel-lpmd.url = "github:dmfrpro/intel-lpmd-flake";
     intel-lpmd.inputs.nixpkgs.follows = "nixpkgs";
 
