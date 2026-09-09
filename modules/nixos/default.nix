@@ -33,6 +33,8 @@
       "nix-command"
       "flakes"
     ];
+
+    flake-registry = "";
   };
 
   users = {
