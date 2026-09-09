@@ -41,6 +41,7 @@
       "plugdev"
       "docker"
       "gamemode"
+      "tss"
     ];
   };
 
