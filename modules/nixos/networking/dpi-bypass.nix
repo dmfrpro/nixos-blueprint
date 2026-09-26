@@ -11,13 +11,8 @@
 
     tgWsProxy = {
       enable = true;
-      host = "127.0.0.1";
-      port = 1443;
       secret = "${secrets.personal.tg-ws-proxy-secret}";
     };
-    zapret = {
-      enable = true;
-      configName = "general (FAKE_TLS_AUTO_ALT3)";
-    };
+    zapret.enable = true;
   };
 }
