@@ -36,6 +36,7 @@
       "networkmanager"
       "input"
       "libvirtd"
+      "qemu-libvirtd"
       "kvm"
       "dialout"
       "plugdev"

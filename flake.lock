@@ -138,6 +138,26 @@
         "type": "github"
       }
     },
+    "i915-sriov": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1790492784,
+        "narHash": "sha256-l3CQediLls+Ipa4qZo/sTVy3tb3UA1Z6aw/LwIGb8aE=",
+        "owner": "dmfrpro",
+        "repo": "i915-sriov-dkms",
+        "rev": "07deb2958ab04e279ae5b0d395feed5293542888",
+        "type": "github"
+      },
+      "original": {
+        "owner": "dmfrpro",
+        "repo": "i915-sriov-dkms",
+        "type": "github"
+      }
+    },
     "intel-lpmd": {
       "inputs": {
         "nixpkgs": [
@@ -368,6 +388,7 @@
         "firefox-addons": "firefox-addons",
         "git-hooks": "git-hooks",
         "home-manager": "home-manager",
+        "i915-sriov": "i915-sriov",
         "intel-lpmd": "intel-lpmd",
         "kimi-code": "kimi-code",
         "nix-vscode-extensions": "nix-vscode-extensions",
