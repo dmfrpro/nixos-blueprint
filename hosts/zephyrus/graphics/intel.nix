@@ -19,15 +19,16 @@
   ];
 
   boot.initrd.kernelModules = [
-    "i915"
+    "xe"
   ];
 
   boot.blacklistedKernelModules = [
-    "xe"
+    "i915"
   ];
 
   # Backlight fixes
   boot.kernelParams = [
-    "i915.enable_dpcd_backlight=1"
+    "xe.force_probe=7d55"
+    "xe.enable_dpcd_backlight=1"
   ];
 }
