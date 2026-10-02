@@ -7,7 +7,7 @@ in
 {
   home.packages = with pkgs; [
     # AI
-    perSystem.kimi-code.kimi-cli
+    perSystem.kimi-code.kimi-code
 
     # Nix
     nixd
@@ -91,7 +91,7 @@ in
       };
 
       # AI
-      kimi.executablePath = "${perSystem.kimi-code.kimi-cli}/bin/kimi";
+      kimi.executablePath = "${perSystem.kimi-code.kimi-code}/bin/kimi";
 
       # Nix
       nixEnvSelector.useFlakes = true;
